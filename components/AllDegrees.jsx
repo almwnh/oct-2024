@@ -14,6 +14,22 @@ export const AllDegrees = ({ student }) => {
     'الفارما',
     'التحاليل الطبية',
   ]
+  // Helper to check if any result is "راسب"
+  const isFailed = [
+    student.theory,
+    student.practical,
+    student.E,
+    student.surgical,
+    student.anatomy,
+    student.first_aids,
+    student.infection_control,
+    student.women,
+    student.pharma,
+    student.medical,
+    student.hospital,
+    student.state,
+  ].some(val => val === "راسب");
+
   return (
     <div>
       <h2 className='text-2xl font-medium text-center mb-8'>
@@ -27,7 +43,6 @@ export const AllDegrees = ({ student }) => {
           <table>
             <thead>
               <tr>
-
                 <th className="p-2 text-xs font-semibold border border-gray-300 bg-gray-100">
                   التمريض النظرى
                 </th>
@@ -47,29 +62,32 @@ export const AllDegrees = ({ student }) => {
             </thead>
             <tbody>
               <tr>
-                <td className="p-2 border border-gray-300">
+                <td className={`p-2 border border-gray-300 ${isFailed ? "text-red-600 font-bold" : ""}`}>
                   {student.theory}
                   <br />
                   <hr className='' />
                   <span className='text-red-600 font-bold'>50</span>
-
                 </td>
-                <td className="p-2 border border-gray-300">{student.practical}
+                <td className={`p-2 border border-gray-300 ${isFailed ? "text-red-600 font-bold" : ""}`}>
+                  {student.practical}
                   <br />
                   <hr className='' />
                   <span className='text-red-600 font-bold'>90</span>
                 </td>
-                <td className="p-2 border border-gray-300">{student.E}
+                <td className={`p-2 border border-gray-300 ${isFailed ? "text-red-600 font-bold" : ""}`}>
+                  {student.E}
                   <br />
                   <hr className='' />
                   <span className='text-red-600 font-bold'>30</span>
                 </td>
-                <td className="p-2 border border-gray-300">{student.surgical}
+                <td className={`p-2 border border-gray-300 ${isFailed ? "text-red-600 font-bold" : ""}`}>
+                  {student.surgical}
                   <br />
                   <hr className='' />
                   <span className='text-red-600 font-bold'>50</span>
                 </td>
-                <td className="p-2 border border-gray-300">{student.anatomy}
+                <td className={`p-2 border border-gray-300 ${isFailed ? "text-red-600 font-bold" : ""}`}>
+                  {student.anatomy}
                   <br />
                   <hr className='' />
                   <span className='text-red-600 font-bold'>50</span>
@@ -81,7 +99,6 @@ export const AllDegrees = ({ student }) => {
           <table>
             <thead>
               <tr>
-
                 <th className="p-2 text-xs font-semibold border border-gray-300 bg-gray-100">
                   الاسعافات الأولية
                 </th>
@@ -101,43 +118,16 @@ export const AllDegrees = ({ student }) => {
             </thead>
             <tbody>
               <tr>
-                <td className="p-2 border border-gray-300">
-                  {student.first_aids}
-                  <br />
-                  <hr className='' />
-                  <span className='text-red-600 font-bold'>30</span>
-
-                </td>
-                <td className="p-2 border border-gray-300">{student.infection_control}
-                  <br />
-                  <hr className='' />
-                  <span className='text-red-600 font-bold'>30</span>
-                </td>
-                <td className="p-2 border border-gray-300">{student.women}
-                  <br />
-                  <hr className='' />
-                  <span className='text-red-600 font-bold'>50</span>
-                </td>
-                <td className="p-2 border border-gray-300">{student.pharma}
-                  <br />
-                  <hr className='' />
-                  <span className='text-red-600 font-bold'>50</span>
-                </td>
-                <td className="p-2 border border-gray-300">{student.medical}
-                  <br />
-                  <hr className='' />
-                  <span className='text-red-600 font-bold'>50</span>
-                </td>
+                <td className={`p-2 border border-gray-300 ${isFailed ? "text-red-600 font-bold" : ""}`}>{student.first_aids}</td>
+                <td className={`p-2 border border-gray-300 ${isFailed ? "text-red-600 font-bold" : ""}`}>{student.infection_control}</td>
+                <td className={`p-2 border border-gray-300 ${isFailed ? "text-red-600 font-bold" : ""}`}>{student.women}</td>
+                <td className={`p-2 border border-gray-300 ${isFailed ? "text-red-600 font-bold" : ""}`}>{student.pharma}</td>
+                <td className={`p-2 border border-gray-300 ${isFailed ? "text-red-600 font-bold" : ""}`}>{student.medical}</td>
               </tr>
             </tbody>
           </table>
-
         </div>
-
-
-
       </div>
-
 
       <div className='mt-12 text-lg md:text-2xl font-medium grid gap-3'>
         <div className='top grid grid-cols-5 gap-2 text-center'>
@@ -159,19 +149,43 @@ export const AllDegrees = ({ student }) => {
         </div>
         <div className='bottom font-bold grid grid-cols-5 gap-2 text-center'>
           <p>
-            {student.hospital} <br /> <hr className='w-24 border-[1px] border-red-500 mx-auto' /> <span className='text-red-600'>70</span>
+            <span
+              className={
+                isFailed
+                  ? 'text-red-600'
+                  : !isNaN(student.hospital)
+                  ? 'text-black'
+                  : 'text-red-600'
+              }
+            >
+              {student.hospital}
+            </span>
+            <br />
+            <hr className='w-24 border-[1px] border-blue-500 mx-auto' />
+            <span className='text-blue-600'>70</span>
           </p>
           <p>
-            {student.total} <br /> <hr className='w-24 border-[1px] border-red-500 mx-auto' /> <span className='text-red-600'>550</span>
+            <span className={isFailed ? "text-red-600" : ""}>
+              {student.total}
+            </span>
+            <br />
+            <hr className='w-24 border-[1px] border-blue-500 mx-auto' />
+            <span className='text-blue-600'>550</span>
           </p>
           <p>
-            {((student.total / 550) * 100).toFixed(2)}%
+            <span className={isFailed ? "text-red-600" : ""}>
+              {((student.total / 550) * 100).toFixed(2)}%
+            </span>
           </p>
           <p>
-            {student.appreciation}
+            <span className={isFailed ? "text-red-600" : ""}>
+              {student.appreciation}
+            </span>
           </p>
           <p>
-            <span className='text-gray-800'>{student.state}</span>
+            <span className={isFailed ? "text-red-600" : "text-gray-800"}>
+              {student.state}
+            </span>
           </p>
         </div>
       </div>
