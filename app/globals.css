@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  direction: rtl;
+  min-height: 100vh;
+  position: relative;
+}
+
+.header {
+  @apply text-white flex justify-between items-center p-6 py-4;
+background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+
+.footer {
+  @apply text-white p-8 text-center ;
+background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.section__title {
+  text-align: center;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.table_component {
+  overflow: auto;
+  width: 100%;
+  }
+
+  .table_component table {
+  border-radius: 15px;
+  border: 1px solid #dededf;
+  height: 100%;
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  border-spacing: 1px;
+  text-align: center;
+}
+
+
+
+.table_component caption {
+  caption-side: top;
+  text-align: center;
+}
+
+.table_component th {
+  border: 1px solid #dededf;
+  background-color: #203A43;
+  color: #ffffff;
+  padding: 5px;
+}
+
+.table_component td {
+  border: 1px solid #dededf;
+  background-color: #ffffff;
+  color: #000000;
+  padding: 5px;
+}
+
+.relative {
+  position: relative;
+}
+
+.grid {
+  display: grid;
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
+.mb-16 {
+  margin-bottom: 4rem;
+}
+
+.p-4 {
+  padding: 1rem;
+}
+
+.section__title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.text-3xl {
+  font-size: 2rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.lg\\:grid-cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media (min-width: 1024px) {
+  .lg\\:grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .lg\\:w-80 {
+    width: 20rem;
+  }
+  .lg\\:h-80 {
+    height: 20rem;
+  }
+}
+
+.object-cover {
+  object-fit: cover;
+}
