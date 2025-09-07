@@ -121,12 +121,12 @@ export const AllDegrees = ({ student }) => {
                 <td className={`p-2 border border-gray-300 ${isFailed ? "text-red-600 font-bold" : ""}`}>{student.first_aids}
                 <br />
                 <hr className='' />
-                <span className='text-red-600 font-bold'>30</span>
+                <span className='text-blue-600 font-bold'>30</span>
                 </td>
                 <td className={`p-2 border border-gray-300 ${isFailed ? "text-red-600 font-bold" : ""}`}>{student.infection_control}
                 <br />
                 <hr className='' />
-                <span className='text-red-600 font-bold'>30</span>
+                <span className='text-blue-600 font-bold'>30</span>
                 </td>
                 <td className={`p-2 border border-gray-300 ${isFailed ? "text-red-600 font-bold" : ""}`}>{student.women}
                 <br />
@@ -135,12 +135,12 @@ export const AllDegrees = ({ student }) => {
                 <td className={`p-2 border border-gray-300 ${isFailed ? "text-red-600 font-bold" : ""}`}>{student.pharma}
                 <br />
                 <hr className='' />
-                <span className='text-red-600 font-bold'>50</span></td>
+                <span className='text-blue-600 font-bold'>50</span></td>
               </td>
                 <td className={`p-2 border border-gray-300 ${isFailed ? "text-red-600 font-bold" : ""}`}>{student.medical}
                 <br />
                 <hr className='' />
-                <span className='text-red-600 font-bold'>50</span></td>
+                <span className='text-blue-600 font-bold'>50</span></td>
                 </td>
               </tr>
             </tbody>
