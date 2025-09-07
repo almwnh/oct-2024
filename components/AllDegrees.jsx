@@ -118,11 +118,30 @@ export const AllDegrees = ({ student }) => {
             </thead>
             <tbody>
               <tr>
-                <td className={`p-2 border border-gray-300 ${isFailed ? "text-red-600 font-bold" : ""}`}>{student.first_aids}</td>
-                <td className={`p-2 border border-gray-300 ${isFailed ? "text-red-600 font-bold" : ""}`}>{student.infection_control}</td>
-                <td className={`p-2 border border-gray-300 ${isFailed ? "text-red-600 font-bold" : ""}`}>{student.women}</td>
-                <td className={`p-2 border border-gray-300 ${isFailed ? "text-red-600 font-bold" : ""}`}>{student.pharma}</td>
-                <td className={`p-2 border border-gray-300 ${isFailed ? "text-red-600 font-bold" : ""}`}>{student.medical}</td>
+                <td className={`p-2 border border-gray-300 ${isFailed ? "text-red-600 font-bold" : ""}`}>{student.first_aids}
+                <br />
+                <hr className='' />
+                <span className='text-red-600 font-bold'>30</span>
+                </td>
+                <td className={`p-2 border border-gray-300 ${isFailed ? "text-red-600 font-bold" : ""}`}>{student.infection_control}
+                <br />
+                <hr className='' />
+                <span className='text-red-600 font-bold'>30</span>
+                </td>
+                <td className={`p-2 border border-gray-300 ${isFailed ? "text-red-600 font-bold" : ""}`}>{student.women}
+                <br />
+                <hr className='' />
+                <span className='text-red-600 font-bold'>50</span></td>
+                <td className={`p-2 border border-gray-300 ${isFailed ? "text-red-600 font-bold" : ""}`}>{student.pharma}
+                <br />
+                <hr className='' />
+                <span className='text-red-600 font-bold'>50</span></td>
+              </td>
+                <td className={`p-2 border border-gray-300 ${isFailed ? "text-red-600 font-bold" : ""}`}>{student.medical}
+                <br />
+                <hr className='' />
+                <span className='text-red-600 font-bold'>50</span></td>
+                </td>
               </tr>
             </tbody>
           </table>
